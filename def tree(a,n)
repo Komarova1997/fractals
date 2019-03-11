@@ -1,0 +1,32 @@
+from turtle import *
+
+def tree(a, n):
+    '''Function for the fractal tree'''
+    if n == 0:
+        return
+
+    lenth = a / (n+1)
+    for i in range(n):
+        speed(59)
+        forward(lenth)
+        left(45)
+        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        left(90)
+        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        right(135)
+
+    forward(lenth)
+    left(180)
+    forward(a)
+
+
+def main():
+    up()
+    goto(0, -150)
+    down()
+    left(90)
+    a = int(input())
+    n = int(input())
+    tree(a, n)
+
+main()
