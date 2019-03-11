@@ -1,0 +1,25 @@
+from turtle import *
+
+def koch(a, n):
+    if n == 0:
+        forward(a)
+        return
+    else:
+        a = a//3
+        koch(a, n-1)
+        left(60)
+        koch(a, n-1)
+        right(120)
+        koch(a, n-1)
+        left(60)
+        koch(a, n-1)
+
+def main():
+    up()
+    goto(-100,0)
+    down()
+    a = int(input('Длина стороны:'))
+    n = int(input('Глубина рекурсии:'))
+    koch(a, n)
+
+main()
