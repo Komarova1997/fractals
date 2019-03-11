@@ -1,0 +1,24 @@
+import turtle
+
+def square(size, n):
+    '''First fractal - exercise'''
+    if n == 0:
+        return
+    turtle.right(20)
+    turtle.up()
+    turtle.forward(size/4)
+    turtle.down()
+    for _ in range(4):
+        turtle.forward(size)
+        turtle.right(90)
+    return square(size * 0.9, n - 1)
+
+
+def main():
+    size = turtle.numinput("Square", "Size (1 - 100):", minval=1, maxval=100)
+    n = turtle.numinput("Square", "Recursion depth (2 - 10000):", minval=2, maxval=10000)
+    print(square(size, n))
+
+
+if __name__ == '__main__':
+    main()
