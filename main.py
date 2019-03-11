@@ -7,12 +7,31 @@ Baidalakova B.
 from turtle import *
 
 
-def eazy_fractal():
+def eazy_fractal(size, n):
     '''Первый фрактал - упражнение'''
+    if n == 0:
+        return
+    turtle.right(20)
+    turtle.up()
+    turtle.forward(size/4)
+    turtle.down()
+    for _ in range(4):
+        turtle.forward(size)
+        turtle.right(90)
+    return eazy_fractal(size * 0.9, n - 1)
 
 
-def bintree():
-    '''Построение двоичного дерева'''
+def bintree(height, angle):
+    '''Построение двоичного дерева: параметры - высота и угол'''
+    if angle == 0:
+        return
+    forward(height)
+    right(45)
+    m(0.9*height,angle-1)
+    left(90)
+    m(0.9*height,angle-1)
+    right(45)
+    bk(height)
 
 
 def branch():
@@ -66,5 +85,3 @@ def levi():
 
 def dragon():
     '''Фрактал Дракон Хартера-Хейтуэя'''
-    
-    
