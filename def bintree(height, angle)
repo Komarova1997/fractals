@@ -1,0 +1,28 @@
+import turtle
+
+def bintree(height, angle):
+    '''Building a binary tree: parameters - height and depth of recursion'''
+    turtle.speed(0.5)
+    if height <= 1:
+        return
+    turtle.color('green')
+    turtle.forward(height)
+    turtle.right(angle/2)
+    bintree(0.68*height, angle)
+    turtle.left(angle)
+    bintree(0.68*height, angle)
+    turtle.right(angle/2)
+    turtle.backward(height)
+
+
+def main():
+
+    height = turtle.numinput("Bintree", "Height (1 - 100):", minval=1, maxval=100)
+    angle = turtle.numinput("Bintree", "Angle (10 - 180):", minval=10, maxval=180)
+    turtle.left(90)
+    print(bintree(height, angle))
+
+
+if __name__ == '__main__':
+    main()
+
