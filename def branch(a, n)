@@ -1,0 +1,34 @@
+import turtle
+
+def tree(a, n):
+    '''Function for the fractal tree'''
+    if n == 0:
+        return
+
+    lenth = a / (n+1)
+    for i in range(int(n)):
+        turtle.speed(0.5)
+        turtle.forward(lenth)
+        turtle.left(45)
+        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        turtle.left(90)
+        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        turtle.right(135)
+
+    turtle.forward(lenth)
+    turtle.left(180)
+    turtle.forward(a)
+
+
+def main():
+    turtle.up()
+    turtle.goto(0, -150)
+    turtle.down()
+    turtle.left(90)
+    a = turtle.numinput("Branch", "Hieght (10 - 1000):", minval=10, maxval=1000)
+    n = turtle.numinput("Branch", "Recursion depth (2 - 1000):", minval=2, maxval=1000)
+    tree(a, n)
+
+
+if __name__ == '__main__':
+    main()
