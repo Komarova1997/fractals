@@ -23,6 +23,7 @@ def main():
     a = turtle.numinput("Koch", "Height (100 - 1000):", minval=100, maxval=1000)
     n = turtle.numinput("Koch", "Recursion depth (2 - 5):", minval=2, maxval=5)
     koch(a, n)
+    turtle.mainloop()
 
 
 if __name__ == '__main__':
