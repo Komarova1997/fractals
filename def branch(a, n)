@@ -1,7 +1,7 @@
 import turtle
 
-def tree(a, n):
-    '''Function for the fractal tree'''
+def branch(a, n):
+    '''Function for the fractal branch'''
     if n == 0:
         return
 
@@ -10,9 +10,9 @@ def tree(a, n):
         turtle.speed(0.5)
         turtle.forward(lenth)
         turtle.left(45)
-        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        branch(0.5 * lenth * (n - i - 1), n - i - 1)
         turtle.left(90)
-        tree(0.5 * lenth * (n - i - 1), n - i - 1)
+        branch(0.5 * lenth * (n - i - 1), n - i - 1)
         turtle.right(135)
 
     turtle.forward(lenth)
@@ -25,9 +25,10 @@ def main():
     turtle.goto(0, -150)
     turtle.down()
     turtle.left(90)
-    a = turtle.numinput("Branch", "Hieght (10 - 1000):", minval=10, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (2 - 1000):", minval=2, maxval=1000)
-    tree(a, n)
+    a = turtle.numinput("Branch", "Hieght (100 - 1000):", minval=100, maxval=1000)
+    n = turtle.numinput("Branch", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    branch(a, n)
+    turtle.mainloop()
 
 
 if __name__ == '__main__':
