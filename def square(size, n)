@@ -18,6 +18,7 @@ def main():
     size = turtle.numinput("Square", "Size (1 - 100):", minval=1, maxval=100)
     n = turtle.numinput("Square", "Recursion depth (2 - 10000):", minval=2, maxval=10000)
     print(square(size, n))
+    turtle.mainloop()
 
 
 if __name__ == '__main__':
