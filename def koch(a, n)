@@ -21,7 +21,7 @@ def main():
     turtle.goto(-100,0)
     turtle.down()
     a = turtle.numinput("Koch", "Height (100 - 1000):", minval=100, maxval=1000)
-    n = turtle.numinput("Koch", "Recursion depth (2 - 5):", minval=2, maxval=5)
+    n = turtle.numinput("Koch", "Recursion depth (0 - 5):", minval=0, maxval=5)
     koch(a, n)
     turtle.mainloop()
 
