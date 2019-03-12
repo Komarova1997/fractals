@@ -21,6 +21,7 @@ def main():
     angle = turtle.numinput("Bintree", "Angle (10 - 180):", minval=10, maxval=180)
     turtle.left(90)
     print(bintree(height, angle))
+    turtle.mainloop()
 
 
 if __name__ == '__main__':
