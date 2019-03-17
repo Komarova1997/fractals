@@ -1,0 +1,39 @@
+import turtle
+
+def ice_fractal_2(height, n):
+    turtle.speed(0)
+    if n == 0:
+        return
+    turtle.forward(height)
+    ice_fractal_2(height/2, n - 1)
+    turtle.forward(height)
+    turtle.left(120)
+    ice_fractal_2(height/2, n - 1)
+    turtle.forward(height)
+    turtle.left(180)
+    ice_fractal_2(height/2, n - 1)
+    turtle.forward(height)
+    turtle.left(120)
+    ice_fractal_2(height/2, n - 1)
+    turtle.forward(height)
+    turtle.left(180)
+    ice_fractal_2(height/2, n - 1)
+    turtle.forward(height)
+    turtle.left(120)
+    ice_fractal_2(height/2, n - 1)
+
+
+def main():
+    turtle.up()
+    turtle.goto(-500, 0)
+    turtle.down()
+    turtle.color('blue')
+    height = turtle.numinput("Ice fractal 2", "Height (50 - 100):", minval=50, maxval=100)
+    n = turtle.numinput("Ice fractal 2", "Recursion depth (0 - 5):", minval=0, maxval=5)
+    ice_fractal_2(height, n)
+    turtle.forward(height * 2)
+    turtle.mainloop()
+
+
+if __name__ == '__main__':
+    main()
