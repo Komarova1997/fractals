@@ -24,8 +24,13 @@ def ice_fractal_1(height, n):
 
 
 def main():
-    height = turtle.numinput("Branch", "Hieght (100 - 1000):", minval=10, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    turtle.color('lightblue')
+    turtle.speed(0)
+    turtle.up()
+    turtle.goto(-300, 100)
+    turtle.down()
+    height = turtle.numinput("Snowflakes ice fractal", "Height (10 - 70):", minval=10, maxval=70)
+    n = turtle.numinput("Snowflakes ice fractal", "Recursion depth (0 - 3):", minval=0, maxval=3)
     ice_fractal_1(height, n)
     turtle.forward(height * 2)
     turtle.right(120)
