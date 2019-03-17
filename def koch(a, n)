@@ -5,22 +5,23 @@ def koch(a, n):
         turtle.forward(a)
         return
     else:
-        a = a//3
-        koch(a, n-1)
+        a = a // 3
+        koch(a, n - 1)
         turtle.left(60)
-        koch(a, n-1)
+        koch(a, n - 1)
         turtle.right(120)
-        koch(a, n-1)
+        koch(a, n - 1)
         turtle.left(60)
-        koch(a, n-1)
-        
+        koch(a, n - 1)
+
 
 def main():
+    turtle.color('purple')
     turtle.speed(0.5)
     turtle.up()
-    turtle.goto(-100,0)
+    turtle.goto(-500, 0)
     turtle.down()
-    a = turtle.numinput("Koch", "Height (100 - 1000):", minval=100, maxval=1000)
+    a = turtle.numinput("Koch", "Height (500 - 1000):", minval=500, maxval=1000)
     n = turtle.numinput("Koch", "Recursion depth (0 - 5):", minval=0, maxval=5)
     koch(a, n)
     turtle.mainloop()
