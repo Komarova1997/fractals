@@ -21,12 +21,15 @@ def minkowski(height, n):
 
 
 def main():
-    height = turtle.numinput("Branch", "Hieght (100 - 1000):", minval=10, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    turtle.color('red')
+    turtle.up()
+    turtle.goto(-300, 0)
+    turtle.down()
+    height = turtle.numinput("Minkowski", "Hieght (5000 - 10000):", minval=5000, maxval=10000)
+    n = turtle.numinput("Minkowski", "Recursion depth (0 - 5):", minval=0, maxval=10)
     minkowski(height, n)
     turtle.mainloop()
 
 
 if __name__ == '__main__':
     main()
-
