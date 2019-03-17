@@ -1,0 +1,35 @@
+import turtle
+
+def minkowski(height, n):
+    if n == 0:
+        return turtle.forward(height)
+
+    minkowski(height / 4, n - 1)
+    turtle.left(90)
+    minkowski(height / 4, n - 1)
+    turtle.right(90)
+    minkowski(height / 4, n - 1)
+    turtle.right(90)
+    minkowski(height / 4, n - 1)
+    minkowski(height / 4, n - 1)
+    turtle.left(90)
+    minkowski(height / 4, n - 1)
+    turtle.left(90)
+    minkowski(height / 4, n - 1)
+    turtle.right(90)
+    minkowski(height / 4, n - 1)
+
+
+def main():
+    turtle.color('red')
+    turtle.up()
+    turtle.goto(-300, 0)
+    turtle.down()
+    height = turtle.numinput("Minkowski", "Hieght (5000 - 10000):", minval=5000, maxval=10000)
+    n = turtle.numinput("Minkowski", "Recursion depth (0 - 5):", minval=0, maxval=10)
+    minkowski(height, n)
+    turtle.mainloop()
+
+
+if __name__ == '__main__':
+    main()
