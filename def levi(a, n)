@@ -12,9 +12,13 @@ def levi(a, n):
         turtle.left(45)
 
 def main():
-    a = turtle.numinput("Branch", "Recursion depth (0 - 1000):", minval=0, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (0 - 8):", minval=0, maxval=8)
-    levi(a,n)
+    turtle.color('green')
+    turtle.up()
+    turtle.goto(-300, 0)
+    turtle.down()
+    a = turtle.numinput("Levi", "Height (5 - 20):", minval=5, maxval=20)
+    n = turtle.numinput("Levi", "Recursion depth (0 - 10):", minval=0, maxval=10)
+    levi(a, n)
     turtle.mainloop()
 
 
