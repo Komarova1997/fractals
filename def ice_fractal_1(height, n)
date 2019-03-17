@@ -2,7 +2,7 @@ import turtle
 
 def ice_fractal_1(height, n):
     if n == 0:
-        return
+        return turtle.forward(height/2)
     turtle.forward(height/2)
     ice_fractal_1(height, n - 1)
     turtle.forward(height)
@@ -17,12 +17,14 @@ def ice_fractal_1(height, n):
     turtle.forward(height/2)
 
 
-
 def main():
-    height = turtle.numinput("Branch", "Hieght (100 - 1000):", minval=10, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    turtle.up()
+    turtle.goto(-500, 0)
+    turtle.down()
+    turtle.color('blue')
+    height = turtle.numinput("Ice fractal 1", "Height (5 - 10):", minval=5, maxval=10)
+    n = turtle.numinput("Ice fractal 1", "Recursion depth (0 - 5):", minval=0, maxval=5)
     ice_fractal_1(height, n)
-    turtle.forward(height/2)
     turtle.mainloop()
 
 
