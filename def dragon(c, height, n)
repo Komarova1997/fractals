@@ -1,0 +1,24 @@
+import turtle
+
+def dragon(c, height, n):
+    '''Fractal Dragon Harter-Heituey'''
+    if n == 0:
+        return turtle.forward(height)
+    turtle.left(45 * c)
+    dragon(1, height, n - 1)
+    turtle.right(90 * c)
+    dragon(- 1, height, n - 1)
+    turtle.left(45 * c)
+
+
+def main():
+    turtle.color('pink')
+    c = 1
+    height = turtle.numinput("Dragon", "Height (10 - 50):", minval=10, maxval=50)
+    n = turtle.numinput("Dragon", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    dragon(c, height, n)
+    turtle.mainloop()
+
+
+if __name__ == '__main__':
+    main()
