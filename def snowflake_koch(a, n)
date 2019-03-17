@@ -1,0 +1,33 @@
+import turtle
+
+def snowflake_koch(a, n):
+    if n == 0:
+        turtle.forward(a)
+        return
+    else:
+        a = a // 3
+        snowflake_koch(a, n - 1)
+        turtle.left(60)
+        snowflake_koch(a, n - 1)
+        turtle.right(120)
+        snowflake_koch(a, n - 1)
+        turtle.left(60)
+        snowflake_koch(a, n - 1)
+
+def main():
+    turtle.color('lightblue')
+    turtle.speed(0.5)
+    turtle.up()
+    turtle.goto(-300, 100)
+    turtle.down()
+    a = turtle.numinput("snowflake koch", "Height (100 - 400):", minval=100, maxval=400)
+    n = turtle.numinput("snowflake koch", "Recursion depth (0 - 3):", minval=0, maxval=3)
+    snowflake_koch(a, n)
+    turtle.right(120)
+    snowflake_koch(a, n)
+    turtle.right(120)
+    snowflake_koch(a, n)
+    turtle.mainloop()
+
+if __name__ == '__main__':
+    main()
