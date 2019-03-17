@@ -11,12 +11,11 @@ def dragon(c, height, n):
     turtle.left(45 * c)
 
 
-
-
 def main():
+    turtle.color('pink')
     c = 1
-    height = turtle.numinput("Branch", "Hieght (100 - 1000):", minval=10, maxval=1000)
-    n = turtle.numinput("Branch", "Recursion depth (0 - 100):", minval=0, maxval=100)
+    height = turtle.numinput("Dragon", "Height (10 - 50):", minval=10, maxval=50)
+    n = turtle.numinput("Dragon", "Recursion depth (0 - 100):", minval=0, maxval=100)
     dragon(c, height, n)
     turtle.mainloop()
 
