@@ -26,7 +26,7 @@ def main():
     turtle.goto(0, -150)
     turtle.down()
     turtle.left(90)
-    a = turtle.numinput("Branch", "Hieght (300 - 500):", minval=300, maxval=500)
+    a = turtle.numinput("Branch", "Height (300 - 500):", minval=300, maxval=500)
     n = turtle.numinput("Branch", "Recursion depth (0 - 10):", minval=0, maxval=6)
     branch(a, n)
     turtle.mainloop()
